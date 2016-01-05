@@ -1,0 +1,26 @@
+{{data}}
+<div class="page-header">
+	<h1>Students</h1>
+	<table class="table table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Address</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="student in students">
+			<td><a href="#/students/{{student.id}}">{{student.name}}</a></td>
+			<td>{{student.phone}}</td>
+			<td>{{student.address}}</td>
+			<td><center><span ng-click="delete_student(student)">X</span></center></td>
+		</tr>
+	</table>
+
+	<form ng-submit="create_student()">
+		<h3>New Student</h3>
+		Name: <div class="form-group"><input type="text" ng-model="name" class="form-control"></div>
+		Phone: <div class="form-group"><input type="text" ng-model="phone" class="form-control"></div>
+		Address: <div class="form-group"><input type="text" ng-model="address" class="form-control"></div>
+		<input type="submit">
+	</form>
+</div>
