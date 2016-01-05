@@ -4,11 +4,14 @@ angular.module('testapp', ['ui.router']).config(['$stateProvider','$urlRouterPro
 			resolve: {
   		  postPromise: ['students', function(students){
   			 return students.getAll();
+  		  }],
+  		  student: ['students', function(students){
+  			 // return students.getAll();
   		  }]
       },
 			url: '/home',
 			templateUrl: '/templates/home.html',
-			controller: 'MainCtrl'
+			controller: 'StudentCtrl'
 		})
 
 		.state('students', {
